@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+    margin: 0;
+    font-family: 'Alata', sans-serif;
+  }
+  
+.container {
+    margin: 0 auto;
+    max-width: 1250px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+  
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.title {
+    margin: 0;
+    background-color: #fff;
+    padding-top: 1rem;
+    padding-left: 2.4rem;
+    padding-right: 2rem;
+}
+  
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+    max-width: 100%;
+}
+  
+.form-group > label {
+    color: rgb(48, 48, 48);
+    font-size: .8rem;
+    margin-bottom: .25rem;
+    font-weight: bold;
+}
+
+select,
+input {
+    padding: .5rem;
+}
+
+
+.btn {background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%)}
+.btn {
+   margin-top: 1.3rem;
+   padding: .7em 1em;
+   text-align: center;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: .3em;
+   display: block;
+   border: none;
+   cursor: pointer;
+ }
+
+ .btn:hover {
+   background-position: right center;
+   color: #fff;
+   text-decoration: none;
+ }
+
+.card-grid {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+}
+  
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: .4rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: rgb(255, 255, 255);
+    transform-style: preserve-3d;
+    transition: 150ms;
+    cursor: pointer;
+    transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+}
+  
+.card:hover {
+    --translate-y: -2px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+  
+.card.flip {
+    --rotate-y: 180deg;
+}
+  
+.card .front {
+    left: 0;
+}
+
+.flashcard-question {
+    font-weight: bold;
+    line-height: 1.5;
+}
+  
+.card .front,
+.card .back {
+    position: absolute;
+    padding: 1rem;
+    backface-visibility: hidden;
+    font-size: 1.3rem;
+}
+  
+.card .back {
+    transform: rotateY(180deg);
+    font-weight: bold;
+}
+  
+.flashcard-options {
+    margin-top: 1.2rem;
+}
+  
+.flashcard-option {
+    margin-top: 1rem;
+    color: rgb(73, 73, 73);
+    font-size: 1rem;
+    font-weight: lighter;
+}
+  
+.flashcard-option:first-child {
+    margin-top: 0;
+}
