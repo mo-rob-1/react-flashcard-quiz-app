@@ -123,6 +123,7 @@ input {
 .card .back {
     transform: rotateY(180deg);
     font-weight: bold;
+    position: relative;
 }
   
 .flashcard-options {
