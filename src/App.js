@@ -31,10 +31,6 @@ function App() {
       })
   }, [])
 
-  useEffect(() => {
-   
-  }, [])
-
   function decodeString(str) {
     const textArea = document.createElement('textarea')
     textArea.innerHTML = str
