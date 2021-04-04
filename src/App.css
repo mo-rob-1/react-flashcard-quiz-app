@@ -3,10 +3,9 @@
 }
 
 body {
-    background-color: whitesmoke;
     margin: 0;
     font-family: 'Alata', sans-serif;
-  }
+}
   
 .container {
     margin: 0 auto;
@@ -19,22 +18,17 @@ body {
 .header {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
-    background-color: white;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 1rem;
+    flex-direction: column;
 }
 
 .title {
     margin: 0;
-    background-color: #fff;
     padding-top: 1rem;
-    padding-left: 2.4rem;
-    padding-right: 2rem;
+    padding-bottom: 1rem;
+    padding-left: .4rem;
 }
   
 .form-group {
@@ -45,7 +39,6 @@ body {
 }
   
 .form-group > label {
-    color: rgb(48, 48, 48);
     font-size: .8rem;
     margin-bottom: .25rem;
     font-weight: bold;
@@ -54,28 +47,32 @@ body {
 select,
 input {
     padding: .5rem;
+    width: 100%;
 }
 
-
-.btn {background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%)}
 .btn {
-   margin-top: 1.3rem;
    padding: .7em 1em;
    text-align: center;
    transition: 0.5s;
    background-size: 200% auto;
    color: white;            
-   box-shadow: 0 0 20px #eee;
    border-radius: .3em;
    display: block;
    border: none;
    cursor: pointer;
+   margin-top: .2rem;
  }
 
  .btn:hover {
    background-position: right center;
-   color: #fff;
    text-decoration: none;
+ }
+
+ .theme-toggle-btn {
+    all: unset;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding-left: .4rem;
  }
 
 .card-grid {
@@ -91,8 +88,6 @@ input {
     align-items: center;
     position: relative;
     border-radius: .4rem;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    background-color: rgb(255, 255, 255);
     transform-style: preserve-3d;
     transition: 150ms;
     cursor: pointer;
@@ -136,7 +131,6 @@ input {
   
 .flashcard-option {
     margin-top: 1rem;
-    color: rgb(73, 73, 73);
     font-size: 1rem;
     font-weight: lighter;
 }
