@@ -91,11 +91,11 @@ input {
     transform-style: preserve-3d;
     transition: 150ms;
     cursor: pointer;
-    /* transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0)); */
+    transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
 }
   
 .card:hover {
-    /* --translate-y: -2px; */
+    --translate-y: -2px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
   
