@@ -100,7 +100,7 @@ input {
 }
   
 .card.flip {
-    --rotate-y: 180deg;
+    transform: rotateY(180deg);
 }
   
 .card .front {
@@ -123,7 +123,6 @@ input {
 .card .back {
     transform: rotateY(180deg);
     font-weight: bold;
-    position: relative;
 }
   
 .flashcard-options {
