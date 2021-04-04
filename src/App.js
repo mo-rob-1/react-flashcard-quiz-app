@@ -2,14 +2,26 @@ import React, { useState, useEffect, useRef } from 'react';
 import FlashcardList from './components/FlashcardList/FlashcardList';
 import axios from 'axios';
 import './App.css';
+import styled, { ThemeProvider } from 'styled-components';
+import { lightMode, darkMode, GlobalStyles } from './themes';
+import { FaMoon } from 'react-icons/fa';
 
 function App() {
-  const [flashcards, setFlashcards] = useState([]);
+  const [flashcards, setFlashcards] = useState([])
   const [categories, setCategories] = useState([])
+  const [theme, setTheme] = useState("light")
 
   const categoryEl = useRef()
   const amountEl = useRef()
 
+  const StyledApp = styled.div`
+    color: ${(props) => props.theme.fontColor};
+    button: ${(props) => props.theme.button};
+  `
+
+  const themeToggler = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light")
+  }
 
   useEffect(() => {
     axios
@@ -17,10 +29,6 @@ function App() {
       .then(res => {
         setCategories(res.data.trivia_categories)
       })
-  }, [])
-
-  useEffect(() => {
-
   }, [])
 
   function decodeString(str) {
@@ -57,9 +65,13 @@ function App() {
   }
 
   return (
+    <ThemeProvider theme={theme === "light" ? lightMode : darkMode}>
+    <GlobalStyles />
+    <StyledApp>
     <>
-      <h1 className="title">Flashcard Trivia Quiz.</h1>
       <form className="header" onSubmit={handleSubmit}>
+      <button className="theme-toggle-btn" onClick={() => themeToggler()}><FaMoon /></button>
+      <h1 className="title">Flashcard Trivia Quiz.</h1>
         <div className="form-group">
           <label htmlFor="category">Category</label>
           <select id="category" ref={categoryEl}>
@@ -80,6 +92,8 @@ function App() {
         <FlashcardList flashcards={flashcards} />
       </div>
     </>
+    </StyledApp>
+    </ThemeProvider>
   );
 }
 
